@@ -26,9 +26,11 @@ X_Data
 ● Website order report- which will list Order IDs and various products (SKUs) part of each
 order. Order ID is common identifier between X’s order report and courier company
 invoice
+
 ● Warehouse pincode to All India pincode mapping -(this should be used to figure out
 delivery zone (a/b/c/d/e) and during analysis compare against one reported by courier
 company in their CSV invoice per Order ID
+
 ● SKU master with gross weight of each product. This should be used to calculate total
 weight of each order and during analysis compare against one reported by courier
 company in their CSV invoice per Order ID. The courier company calculates weight in
@@ -36,15 +38,19 @@ slabs that is applicable for that delivery zone, so first you have to figure out
 weight of the shipment and then figure out applicable weight (based on zone’s weight
 slab).
 
+
 Delivery Company Data
+
 ● Invoice in CSV file mentioning AWB Number (courier company’s own internal ID), Order
 ID (company X’s order ID), weight of shipment, warehouse pickup pincode, customer
 delivery pincode, zone of delivery, charges per shipment, type of shipment
+
 ● Courier charges rate card at weight slab and pincode level. If the invoice mentions
 “Forward charges” then only forward charges (“fwd”) should be applicable as per zone
 and fixed & additional weights based on weight slabs. If the invoice mentions “Forward
-and rto charges” then forward charges (“fwd”) and RTO charges (“rto”) should be
+and rto charges” then forward charges (“fwd”) and RTO charges (“rto”) should be 
 applicable as per zone and fixed & additional weights based on weight slabs.
+
 ● For the first slab of that zone, “fixed” rate as per the slab is applicable. For each
 additional slab, “additional” weight in the same proportion is applicable. Total charges will
 be “fixed” + “total additional” if any. For example: weight 2.2KG, Zone C. So for Zone C
@@ -60,7 +66,9 @@ the charge is “fwd”, and for each 0.75 after the first, charges will be addi
 ● Expected Charge as per X (Rs.)
 ● Charges Billed by Courier Company (Rs.)
 ● Difference Between Expected Charges and Billed Charges (Rs.)
+
 **Summary**
+
 Total orders where X has been correctly charged 
 
 Total Orders where X has been overcharged
